@@ -283,5 +283,24 @@ document
     renderCalendar();
 };
 
+document
+.getElementById("nextBtn")
+.onclick=()=>{
+
+    displayDate =
+    new Date(
+
+        displayDate
+        .getFullYear(),
+
+        displayDate
+        .getMonth()+1,
+
+        1
+    );
+
+    renderCalendar();
+};
+
 renderCalendar();
 renderMemoList();
