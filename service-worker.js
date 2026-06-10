@@ -1,36 +1,65 @@
-const CACHE_NAME = "calendar-v1";
+const CACHE_NAME =
+"calendar-memo-v1";
 
-const urls = [
+const urlsToCache = [
+
     "./",
+
     "./index.html",
+
     "./style.css",
-    "./script.js",
+
+    "./app.js",
+
     "./manifest.json"
 ];
 
 self.addEventListener(
-    "install",
-    event => {
+"install",
+event=>{
 
-        event.waitUntil(
-            caches.open(CACHE_NAME)
-            .then(cache =>
-                cache.addAll(urls)
-            )
-        );
-    }
-);
+    event.waitUntil(
+
+        caches
+        .open(CACHE_NAME)
+
+        .then(cache=>{
+
+            return cache.addAll(
+                urlsToCache
+            );
+        })
+    );
+});
 
 self.addEventListener(
-    "fetch",
-    event => {
+"fetch",
+event=>{
 
-        event.respondWith(
-            caches.match(event.request)
-            .then(response =>
-                response ||
-                fetch(event.request)
-            )
-        );
-    }
-);
+    event.respondWith(
+
+        caches.match(
+            event.request
+        )
+
+        .then(response=>{
+
+            return response ||
+                   fetch(
+                   event.request
+                   );
+        })
+    );
+});
+
+if(
+    "serviceWorker"
+    in navigator
+){
+
+    navigator
+    .serviceWorker
+    .register(
+        "./service-worker.js"
+    );
+}

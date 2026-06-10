@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>カレンダーメモ</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+<title>カレンダーメモ</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+
+<meta name="theme-color" content="#007AFF">
 </head>
+
 <body>
 
-<h1>🗓️ カレンダーメモ</h1>
-
-<div class="header">
-    <button id="prevMonth">←</button>
-    <h2 id="monthTitle"></h2>
-    <button id="nextMonth">→</button>
-</div>
+<header>
+    <button id="prevBtn">‹</button>
+    <h1 id="monthLabel"></h1>
+    <button id="nextBtn">›</button>
+</header>
 
 <div class="weekdays">
     <div>日</div>
@@ -30,24 +33,31 @@
 
 <div id="calendar" class="calendar"></div>
 
-<hr>
+<section class="detail">
 
 <h2 id="selectedDate"></h2>
 
-<input id="title" placeholder="タイトル">
-
-<textarea
-id="content"
-rows="5"
-placeholder="内容"></textarea>
-
-<button id="saveButton">保存</button>
-
-<h3>メモ一覧</h3>
-
 <div id="memoList"></div>
 
-<script src="script.js"></script>
+<div class="addMemo">
+
+<input
+id="titleInput"
+placeholder="タイトル">
+
+<textarea
+id="contentInput"
+placeholder="内容"></textarea>
+
+<button id="saveBtn">
+保存
+</button>
+
+</div>
+
+</section>
+
+<script src="app.js"></script>
 
 </body>
 </html>
