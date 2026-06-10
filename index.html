@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カレンダーメモ</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<h1>🗓️ カレンダーメモ</h1>
+
+<div class="header">
+    <button id="prevMonth">←</button>
+    <h2 id="monthTitle"></h2>
+    <button id="nextMonth">→</button>
+</div>
+
+<div class="weekdays">
+    <div>日</div>
+    <div>月</div>
+    <div>火</div>
+    <div>水</div>
+    <div>木</div>
+    <div>金</div>
+    <div>土</div>
+</div>
+
+<div id="calendar" class="calendar"></div>
+
+<hr>
+
+<h2 id="selectedDate"></h2>
+
+<input id="title" placeholder="タイトル">
+
+<textarea
+id="content"
+rows="5"
+placeholder="内容"></textarea>
+
+<button id="saveButton">保存</button>
+
+<h3>メモ一覧</h3>
+
+<div id="memoList"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
